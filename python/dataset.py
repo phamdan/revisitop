@@ -1,7 +1,7 @@
 import os
 import pickle
 
-DATASETS = ['roxford5k', 'rparis6k', 'revisitop1m']
+DATASETS = ['oxford5k']
 
 def configdataset(dataset, dir_main):
 
@@ -10,7 +10,7 @@ def configdataset(dataset, dir_main):
     if dataset not in DATASETS:    
         raise ValueError('Unknown dataset: {}!'.format(dataset))
 
-    if dataset == 'roxford5k' or dataset == 'rparis6k':
+    if dataset == 'oxford5k':
         # loading imlist, qimlist, and gnd, in cfg as a dict
         gnd_fname = os.path.join(dir_main, dataset, 'gnd_{}.pkl'.format(dataset))
         with open(gnd_fname, 'rb') as f:
